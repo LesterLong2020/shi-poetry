@@ -136,5 +136,8 @@
         "presets": [
             "react-app"
         ]
+    },
+    "devDependencies": {
+        "typescript": "^3.7.4"
     }
 }
