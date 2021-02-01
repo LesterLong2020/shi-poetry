@@ -21,7 +21,10 @@ const PORT = parseInt(process.env.PORT, 10) || 8000;
 const HOST = process.env.IP === 'true' ? IP : (process.env.HOST || 'localhost');
 const protocol = process.env.HTTPS === 'true' ? 'https' : 'http';
 
-const compiler = webpack(webpackConfig);
+const compiler = webpack({
+    ...webpackConfig,
+    target: "web"
+});
 const devServerOptions = {
     ...webpackConfig.devServer,
     https: process.env.HTTPS === 'true',

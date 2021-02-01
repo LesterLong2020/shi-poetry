@@ -7,21 +7,21 @@
 import { copy } from "lester-tools";
 import Avatar from "src/assets/images/post6.png";
 import style from './style.less';
-// import '../Demo/EventLoop';
-// import '../Demo/Promise';
-// import '../Demo/Test';
-// import '../Demo/CallApplyBind';
-// import '../Demo/New';
-// import '../Demo/DebounceThrottle';
-// import '../Demo/This';
-// import '../Demo/Http';
-// import '../Demo/Import';
-// import '../Demo/DataType';
-// import '../Demo/Array';
-// import '../Demo/Iterator';
-// import '../Demo/Generator';
-// import '../Demo/AsyncAwait';
-// import '../Demo/Class';
+// import '../Index/EventLoop';
+// import '../Index/Promise';
+// import '../Index/Test';
+// import '../Index/CallApplyBind';
+// import '../Index/New';
+// import '../Index/DebounceThrottle';
+// import '../Index/This';
+// import '../Index/Http';
+// import '../Index/Import';
+// import '../Index/DataType';
+// import '../Index/Array';
+// import '../Index/Iterator';
+// import '../Index/Generator';
+// import '../Index/AsyncAwait';
+// import '../Index/Class';
 
 window.onload = function () {
   document.getElementById('name')?.addEventListener('click', () => {

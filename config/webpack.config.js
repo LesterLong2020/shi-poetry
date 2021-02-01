@@ -15,8 +15,7 @@ module.exports = function (env) {
 
     return {
         entry: {
-            main: path.resolve(__dirname, '../src/index.ts'),
-            // 'pageTwo/': path.resolve(__dirname, '../src/index.ts')
+            main: path.resolve(__dirname, '../src/index.tsx'),
         },
         output: {
             path: path.resolve(__dirname, '../dist'),
@@ -24,7 +23,6 @@ module.exports = function (env) {
             publicPath: './'
         },
         mode: env,
-        target: "web",
         devServer: {
             hot: true,
             inline: true,
@@ -79,6 +77,7 @@ module.exports = function (env) {
                 use: [{
                     loader: 'url-loader',
                     options: {
+                        esModule: false,
                         limit: 8192,
                         name: 'assets/images/[name].[ext]'
                     }
@@ -111,11 +110,6 @@ module.exports = function (env) {
             new HtmlWebpackPlugin({
                 template: path.resolve(__dirname, '../public/index.html'),
             }),
-            /* new HtmlWebpackPlugin({
-                template: path.resolve(__dirname, '../public/index.html'),
-                filename: "pageTwo.html",
-                chunks: ['pageTwo/']
-            }), */
             new MiniCssExtractPlugin({
                 filename: 'css/[name].[contenthash].css'
             }),

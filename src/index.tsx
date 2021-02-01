@@ -1,11 +1,16 @@
-import "@babel/polyfill";
+// import "@babel/polyfill";
+import "react-app-polyfill/ie9";
+import "react-app-polyfill/stable";
+import React from "react";
+import ReactDom from "react-dom";
 import App from './App';
 
-const rootEle: HTMLElement|null = document.getElementById('root');
-if (rootEle) {
-    rootEle.innerHTML = App;
-}
-
+ReactDom.render(
+    <React.StrictMode>
+        <App />
+    </React.StrictMode>,
+    document.getElementById("root")
+);
 
 (function (win, doc, standardWidth) {
     function resizeBaseFontSize() {
