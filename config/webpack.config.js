@@ -9,6 +9,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require("copy-webpack-plugin");
+const SimpleProgressWebpackPlugin = require("simple-progress-webpack-plugin");
 
 module.exports = function (env) {
     const isDev = env === 'development';
@@ -54,7 +55,7 @@ module.exports = function (env) {
                 return assetFilename.endsWith('.js');
             }
         },
-        devtool: 'source-map',
+        devtool: 'inline-source-map',
         module: {
             rules: [{
                 test: /\.(js|jsx)$/,
@@ -119,6 +120,7 @@ module.exports = function (env) {
                     to: '../dist/'
                 }]
             }),
+            new SimpleProgressWebpackPlugin(),
         ].filter(Boolean)
     }
 };
